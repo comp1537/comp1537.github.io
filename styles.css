@@ -1,0 +1,22 @@
+main { width: 90vw; margin: 0 auto; text-align: center; background-color: whitesmoke;}
+h1 span {
+    background-color:silver;
+    display: inline-block;
+    width: 30vw;
+    padding: 15px;
+    color: white;
+}
+section > * {display: inline-block; height: 20vh; border: 1px solid red;}
+table {width: 30vw; margin: 0 auto;}
+table td {padding: 5px;}
+table tr:nth-child(1) {
+    background-color:cornflowerblue;
+    color: white;
+}
+table tr:nth-child(even) {
+    background-color:coral;
+    color: whitesmoke;
+}
+img {
+    border-radius: 50%;
+}
