@@ -12,7 +12,7 @@ document.getElementById('toggleHideShow').addEventListener('click', function(eve
 
 
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
+    navigator.serviceWorker.register('./sw.js')
     .then(function(response) { console.log('SW was registered');})
     .catch(function(err) { console.log('SW wasn"t registered');})
 }
