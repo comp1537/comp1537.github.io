@@ -7,12 +7,17 @@ let files = [
 ];
 
 self.addEventListener('install', function(event) {
-
-    caches.open(name).
-        then(function(cache) {
-            cache.addAll(files)
-        })
-
+    event.waitUntil(
+        caches.open(name).
+            then(function(cache) {
+                return cache.addAll(files);
+            }).
+            then(function() {
+                // simply makes the new service worker the active one
+                // I won't need to wait for the old worker (if any) to handle the fetches
+                return self.skipWaiting();
+            })
+    );
 })
 
 self.addEventListener('fetch', function(event) {
